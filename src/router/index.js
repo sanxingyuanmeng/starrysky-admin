@@ -56,27 +56,28 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/goods',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/goods/list',
+    name: 'Goods',
+    meta: { title: '商品管理', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/goods/list'),
+        meta: { title: '商品列表', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'create',
+        name: 'create',
+        component: () => import('@/views/goods/create'),
+        meta: { title: '创建商品', icon: 'form' }
       }
     ]
   },
 
+  /**
   {
     path: '/form',
     component: Layout,
@@ -158,7 +159,7 @@ export const constantRoutes = [
       }
     ]
   },
-
+*/
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
